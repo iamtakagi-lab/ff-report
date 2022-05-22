@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  app:
+    container_name: ff-report
+    image: ghcr.io/renchon-iamtakagi-net/ff-report:latest
+    volumes:
+      - ./crontab:/crontab
+      - ./data.json:/data.json
+    build:
+      context: .
+    env_file:
+      - .env
