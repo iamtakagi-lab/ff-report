@@ -14,7 +14,6 @@ RUN apk --update-cache add \
     aiohttp \
     asyncio
 
-COPY data.json /data.json
 COPY app.py /app.py
 
 ADD crontab /var/spool/crontab/root
