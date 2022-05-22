@@ -17,7 +17,7 @@ auth.set_access_token(TWITTER_AT, TWITTER_ATS)
 
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-DATA_DIST = "/data.json"
+DATA_DEST = "/data.json"
 
 logger = logging.getLogger("followback")
 format = "%(asctime)s %(levelname)s %(name)s :%(message)s"
@@ -44,7 +44,7 @@ async def handle():
     me = api.me()
     followers_count = me.followers_count
     friends_count = me.friends_count
-    with open(DATA_DIST, mode='r', encoding='utf-8') as file:
+    with open(DATA_DEST, mode='r', encoding='utf-8') as file:
         prev_data = json.load(file)
     prev_followers_count = prev_data["followers_count"]
     prev_friends_count = prev_data["friends_count"]
@@ -57,7 +57,7 @@ async def handle():
     
 
 def save(followers_count, friends_count):
-    with open(DATA_DIST, mode='w', encoding='utf-8') as file:
+    with open(DATA_DEST, mode='w', encoding='utf-8') as file:
             json.dump({
                 'followers_count': followers_count,
                 'friends_count': friends_count

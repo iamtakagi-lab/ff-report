@@ -8,5 +8,6 @@ services:
       - ./data.json:/data.json
     build:
       context: .
+      dockerfile: Dockerfile
     env_file:
       - .env
