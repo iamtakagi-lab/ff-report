@@ -19,7 +19,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 DATA_DEST = "/data.json"
 
-logger = logging.getLogger("followback")
+logger = logging.getLogger("ff-report")
 format = "%(asctime)s %(levelname)s %(name)s :%(message)s"
 logging.basicConfig(level=logging.INFO, format=format)
 
