@@ -49,8 +49,8 @@ async def handle():
     prev_followers_count = prev_data["followers_count"]
     prev_friends_count = prev_data["friends_count"]
     text = f'Followers: {followers_count} ({signWith(followers_count - prev_followers_count)}) Following: {friends_count} ({signWith(friends_count - prev_friends_count)})'
-    logger.info(text)
     await post_discord_webhook(text)
+    logger.info(text)
     logger.info("保存中...")
     save(followers_count, friends_count)
     logger.info("保存しました")
