@@ -1,6 +1,8 @@
 # ff-report
 
-`$ docker-compose up -d`
+```sh
+docker-compose up -d
+```
 
 ## LICENSE
 MIT License.
